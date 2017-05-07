@@ -9,11 +9,9 @@
         <script src="../js/bootstrap.js"></script>
     </head>
     <body>
-        <div class="lols">
+        <div class="adminBody">
             <h1>Hello User</h1>
         </div>
-        
-        
-       
+         
     </body>
 </html>
