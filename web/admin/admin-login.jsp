@@ -9,7 +9,7 @@
         <script src="../js/bootstrap.js"></script>
     </head>
     <body class="adminBody">
-        <div class="container-fluid">
+        
             <jsp:include page="/header.jsp" />  
             <hr class="alert-danger">
 
@@ -35,7 +35,6 @@
                     
                 </div>
             </div>
-            <jsp:include page="/footer.jsp" />
-        </div>    
+            <jsp:include page="/footer.jsp" />  
     </body>
 </html>
