@@ -1,7 +1,5 @@
 .adminBody{
- 
-    /*background: #f1f4f7;*/
-    background: #ffab62;
+    background: #f1f4f7;
 }
 
 .adminLogInPanel{
@@ -22,4 +20,10 @@
     position:absolute;
     bottom:0;
     left:0;
+}
+
+.adminHeader{
+    background-color: black;
+    color: red;
+    height: 75px;
 }
