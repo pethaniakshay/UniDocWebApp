@@ -19,7 +19,8 @@
     PreparedStatement newReq = con.prepareStatement("select * from newregistereddata where isprocessed = ?");
     newReq.setString(1, "no");
     ResultSet User  = newReq.executeQuery();
-
+    
+    int total=0;
       
 
  %>
@@ -64,11 +65,11 @@
                         <div class="col-md-offset-1 col-md-6">
                            <ul class="list-inline list-group h1">
                               <li>No of Pending Approval</li>
-                              <li>500</li>
+                              <li><%= total %></li>
                            </ul>  
                         </div>
                         <div class="col-md-2 h1">
-                            <span class="btn btn-primary">Approve All Requests</span>
+                            <a href="approve-all.jsp" class="btn btn-primary">Approve All Requests</a>
                         </div>
                     </div>
                 
@@ -85,7 +86,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% while (User.next()){ %>
+                            <% while (User.next()){  total++;%>
                                
                             <tr>
                                 <td class="text-left"><% out.print(User.getInt(34)); %></td>
@@ -104,5 +105,6 @@
               </div>
             </div>
         </div>
+    </body>
 </html>
-   </body>
+   
