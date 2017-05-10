@@ -100,10 +100,13 @@ public class ProcessData {
                 maritial.setString(3, getData.getString(12));
                 maritial.executeUpdate();  
                 
-                PreparedStatement updates = con.prepareStatement("update newregistereddata set isprocessed ? where pre_enroll = ?");
+                PreparedStatement updates = con.prepareStatement("update newregistereddata set isprocessed =? where pre_enroll = ?");
                 updates.setString(1, "yes");
                 updates.setInt(2, preEnroll);
                 updates.executeUpdate();
+                
+                con.commit();
+                con.close();
                 
         } catch (SQLException ex) {
             Logger.getLogger(ProcessData.class.getName()).log(Level.SEVERE, null, ex);

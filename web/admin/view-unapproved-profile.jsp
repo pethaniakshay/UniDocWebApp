@@ -1,12 +1,15 @@
+
 <%@page import="java.sql.*"%>
 <%@page import="dbManager.DbConnectionProvider"%>
 <%@page import="java.util.StringTokenizer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String uname=null;
+    int enroll=0;
     if (session != null) {
         if (session.getAttribute("uname") != null) {
                 uname = (String) session.getAttribute("uname");
+                enroll = Integer.parseInt(request.getParameter("enroll"));
 
         }
         else {
@@ -19,7 +22,7 @@
     PreparedStatement newReq = con.prepareStatement("select * from newregistereddata where isprocessed = ?");
     newReq.setString(1, "no");
     ResultSet User  = newReq.executeQuery();
-
+    
       
 
  %>
@@ -58,7 +61,7 @@
               <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h1 class="page-header">UniDoc System Admin Dashboard</h1>
 
-                <h2 class="sub-header">Section title</h2>
+                <h2 class="sub-header"><%out.print(enroll); %></h2>
                
                     <div class="row sub-header">
                         <div class="col-md-offset-1 col-md-6">
@@ -72,35 +75,7 @@
                         </div>
                     </div>
                 
-                    <table class="table table-responsive table-hover">
-                        <thead>
-                            <tr>
-                                <th class="text-left">Enroll #</th>
-                                <th class="text-left">First Name</th>
-                                <th class="text-left">Last Name</th>
-                                <th class="text-left">Gender</th>
-                                <th class="text-left">Full Profile</th>
-                                <th class="text-left">Approve</th>
-                                <th class="text-left">Reject</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% while (User.next()){ %>
-                               
-                            <tr>
-                                <td class="text-left"><% out.print(User.getInt(34)); %></td>
-                                <td class="text-left"><% out.print(User.getString(1)); %></td>
-                                <td class="text-left"><% out.print(User.getString(2)); %></td>
-                                <td class="text-left"><% out.print(User.getString(2)); %></td>
-                                <td class="text-left"><a href="view-unapproved-profile.jsp?enroll=<% out.print(User.getInt(34));%>" class="btn-success btn btn-xs">View Details</a></td>
-                                <td class="text-left">
-                                    <a href="approve-one-profile.jsp?enroll=<% out.print(User.getInt(34));%>" class="btn-success btn btn-xs">Approve</a>
-                                </td>
-                                <td><a href="reject-new-user.jsp?enroll=<% out.print(User.getInt(34));%>" class="glyphicon glyphicon-remove text-danger"></a></td>
-                            </tr>
-                            <% } %>
-                        </tbody>
-                    </table>  
+                    
               </div>
             </div>
         </div>
