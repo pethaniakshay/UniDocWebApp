@@ -36,9 +36,9 @@ public class ResidentDataProvider {
     
     List<ArrayList<String>> bankAccounts = new ArrayList<>();
     
-    ArrayList<String> email = new ArrayList<String>();
+     private String email;
     
-    ArrayList<String> mobile = new ArrayList<String>();
+    private String mobile;
     
     private String drivingLicenceNo;
     private String drivingLicenceCdoi;
@@ -110,17 +110,17 @@ public class ResidentDataProvider {
             
             PreparedStatement emails = con.prepareStatement("select * from contact_email where uid = ?");
             emails.setString(1, uid);
-            ResultSet getEmail = banAccount.executeQuery();
-            while(getEmail.next()){
-                this.email.add(getEmail.getString(2));
-            }
+            ResultSet getEmail = emails.executeQuery();
+            getEmail.next();
+            this.email =getEmail.getString(2);
+            
             
             PreparedStatement mobiles = con.prepareStatement("select * from contact_mobile where uid = ?");
             mobiles.setString(1, uid);
-            ResultSet getMobile = banAccount.executeQuery();
-            while(getMobile.next()){
-                this.mobile.add(getEmail.getString(2));
-            }
+            ResultSet getMobile = mobiles.executeQuery();
+            getMobile.next();
+            this.mobile =getMobile.getString(2);
+            
             
             PreparedStatement drivingLicence = con.prepareStatement("select * from driving_licence where uid = ?");    
             drivingLicence.setString(1, uid);            
@@ -280,5 +280,21 @@ public class ResidentDataProvider {
     
     public String getEciIsVerified(){
         return this.drivingLicenceNo;
+    }
+    
+    public String getMobile(){
+        return this.mobile;
+    }
+    
+    public String getEmail(){
+        return this.email;
+    }
+    
+    public String getMotherUid(){
+        return this.parentMotherUid;   
+    }
+    
+    public String getFatherUid(){
+         return this.parentFatherUid;
     }
 }

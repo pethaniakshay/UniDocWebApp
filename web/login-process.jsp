@@ -13,7 +13,7 @@
     if(status){  
         session = request.getSession(true); // reuse existing
         session.setAttribute("Uid",uid);
-        session.setMaxInactiveInterval(30); // 30 seconds  
+        //session.setMaxInactiveInterval(30); // 30 seconds  
         //RequestDispatcher rd = request.getRequestDispatcher("user-home.jsp");
         //rd.forward(request, response);
         %>
