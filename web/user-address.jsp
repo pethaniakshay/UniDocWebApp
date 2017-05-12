@@ -83,12 +83,12 @@
 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-menu">
-                    <li class="active">
+                    <li>
                         <a href="user-home.jsp">
                         <i class="fa fa-male"></i> Profile
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="user-address.jsp">
                         <i class="fa fa-address-card"></i> Address
                         </a>
@@ -131,31 +131,25 @@
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="pro-title">Bio Graph</h4>
+                                    <h4 class="pro-title">Address</h4>
                                 </div><!--col-md-12 close-->
                                 <div class="col-md-6">
-                                    <div class="table-responsive responsiv-table">
-                                        <table class="table bio-table">
+                                    <div class="table-responsive responsiv-table"><table class="table bio-table">
                                             <tbody>
                                                 <tr>      
-                                                    <td>Firstname</td>
-                                                    <td>: <%= provider.getResidentFirstName() %></td> 
+                                                    <td><%= provider.getAddressTitle()%></td> 
                                                 </tr>
-                                                <tr>    
-                                                    <td>Middlename</td>
-                                                    <td>: <%= provider.getResidentMiddleName()%></td>       
+                                                <tr>      
+                                                    <td><%= provider.getAddressHouseNo() %></td> 
                                                 </tr>
-                                                <tr>    
-                                                    <td>Lastname</td>
-                                                    <td>: <%= provider.getResidentLastName()%></td>       
+                                                <tr>      
+                                                    <td><%= provider.getAddressStreet() %></td> 
                                                 </tr>
-                                                <tr>    
-                                                    <td>Fullname</td>
-                                                    <td>: <%= provider.getResidentFullName() %></td>       
+                                                <tr>      
+                                                    <td><%= provider.getAddressArea() %></td> 
                                                 </tr>
-                                                <tr>
-                                                    <td>Gender</td>
-                                                    <td>: <%= provider.getResidentGender() %></td> 
+                                                <tr>      
+                                                    <td><%= provider.getAddressVillage() %></td> 
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -165,30 +159,20 @@
                                     <div class="table-responsive responsiv-table">
                                         <table class="table bio-table">
                                             <tbody>
-                                                
-                                                <tr>  
-                                                    <td>Emai Id</td>
-                                                    <td>: <%= provider.getEmail() %></td> 
-                                                    </tr>
-                                                <tr>    
-                                                    <td>Mobile</td>
-                                                    <td>: <%= provider.getMobile() %></td>       
+                                                <tr>      
+                                                    <td>City: <%= provider.getAddressCity() %></td> 
                                                 </tr>
-                                                <tr>    
-                                                    <td>Birth Date</td>
-                                                    <td>: <%= provider.getResidentBirthDate() %></td>       
+                                                <tr>      
+                                                    <td>District: <%= provider.getAddressDistrict() %></td> 
                                                 </tr>
-                                                
-                                                <tr>    
-                                                    <td>Mother</td>
-                                                    <td>: <%= provider.getMotherUid() %></td>       
+                                                <tr>      
+                                                    <td>State: <%= provider.getAddressState() %></td> 
                                                 </tr>
-                                                
-                                                <tr>    
-                                                    <td>Father</td>
-                                                    <td>: <%= provider.getFatherUid() %></td>       
-                                                </tr>
-                                              
+                                                <tr>      
+                                                    <td>Country: <%= provider.getAddressCountry() %></td> 
+                                                </tr><tr>      
+                                                    <td>Pin: <%= provider.getAddressPinCode() %></td> 
+                                                </tr>       
                                             </tbody>
                                         </table>
                                     </div><!--table-responsive close-->

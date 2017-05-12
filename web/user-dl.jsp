@@ -83,7 +83,7 @@
 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-menu">
-                    <li class="active">
+                    <li>
                         <a href="user-home.jsp">
                         <i class="fa fa-male"></i> Profile
                         </a>
@@ -107,7 +107,7 @@
                         <i class="fa fa-bank"></i> Bank
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="user-dl.jsp">
                         <i class="fa fa-drivers-license"></i> Driving Licence
                         </a>
@@ -131,66 +131,34 @@
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4 class="pro-title">Bio Graph</h4>
+                                    <h4 class="pro-title">Driving Licence</h4>
                                 </div><!--col-md-12 close-->
                                 <div class="col-md-6">
-                                    <div class="table-responsive responsiv-table">
-                                        <table class="table bio-table">
+                                    <div class="table-responsive responsiv-table"><table class="table bio-table">
                                             <tbody>
-                                                <tr>      
-                                                    <td>Firstname</td>
-                                                    <td>: <%= provider.getResidentFirstName() %></td> 
+                                                <tr> 
+                                                    <td>DL No</td>
+                                                    <td>: <%= provider.getDrivingLicenceNumber() %></td> 
                                                 </tr>
-                                                <tr>    
-                                                    <td>Middlename</td>
-                                                    <td>: <%= provider.getResidentMiddleName()%></td>       
+                                                <tr> 
+                                                    <td>DOI</td>
+                                                    <td>: <%= provider.getDrivingLicenceDOI() %></td> 
                                                 </tr>
-                                                <tr>    
-                                                    <td>Lastname</td>
-                                                    <td>: <%= provider.getResidentLastName()%></td>       
+                                                <tr> 
+                                                    <td>CDOI</td>
+                                                    <td>: <%= provider.getDrivingLicenceCDOI() %></td> 
                                                 </tr>
-                                                <tr>    
-                                                    <td>Fullname</td>
-                                                    <td>: <%= provider.getResidentFullName() %></td>       
-                                                </tr>
-                                                <tr>
-                                                    <td>Gender</td>
-                                                    <td>: <%= provider.getResidentGender() %></td> 
-                                                </tr>
+                                                <tr> 
+                                                    <td>Valid Till</td>
+                                                    <td>: <%= provider.getDrivingLicenceExpdate() %></td> 
+                                                </tr> 
                                             </tbody>
                                         </table>
                                     </div><!--table-responsive close-->
                                 </div><!--col-md-6 close-->
                                 <div class="col-md-6">
                                     <div class="table-responsive responsiv-table">
-                                        <table class="table bio-table">
-                                            <tbody>
-                                                
-                                                <tr>  
-                                                    <td>Emai Id</td>
-                                                    <td>: <%= provider.getEmail() %></td> 
-                                                    </tr>
-                                                <tr>    
-                                                    <td>Mobile</td>
-                                                    <td>: <%= provider.getMobile() %></td>       
-                                                </tr>
-                                                <tr>    
-                                                    <td>Birth Date</td>
-                                                    <td>: <%= provider.getResidentBirthDate() %></td>       
-                                                </tr>
-                                                
-                                                <tr>    
-                                                    <td>Mother</td>
-                                                    <td>: <%= provider.getMotherUid() %></td>       
-                                                </tr>
-                                                
-                                                <tr>    
-                                                    <td>Father</td>
-                                                    <td>: <%= provider.getFatherUid() %></td>       
-                                                </tr>
-                                              
-                                            </tbody>
-                                        </table>
+                                       
                                     </div><!--table-responsive close-->
                                 </div><!--col-md-6 close-->
                             </div><!--row close-->

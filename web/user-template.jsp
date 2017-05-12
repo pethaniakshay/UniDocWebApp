@@ -84,7 +84,7 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-menu">
                     <li class="active">
-                        <a href="user-home.jsp">
+                        <a href="#">
                         <i class="fa fa-male"></i> Profile
                         </a>
                     </li>
@@ -135,62 +135,7 @@
                                 </div><!--col-md-12 close-->
                                 <div class="col-md-6">
                                     <div class="table-responsive responsiv-table">
-                                        <table class="table bio-table">
-                                            <tbody>
-                                                <tr>      
-                                                    <td>Firstname</td>
-                                                    <td>: <%= provider.getResidentFirstName() %></td> 
-                                                </tr>
-                                                <tr>    
-                                                    <td>Middlename</td>
-                                                    <td>: <%= provider.getResidentMiddleName()%></td>       
-                                                </tr>
-                                                <tr>    
-                                                    <td>Lastname</td>
-                                                    <td>: <%= provider.getResidentLastName()%></td>       
-                                                </tr>
-                                                <tr>    
-                                                    <td>Fullname</td>
-                                                    <td>: <%= provider.getResidentFullName() %></td>       
-                                                </tr>
-                                                <tr>
-                                                    <td>Gender</td>
-                                                    <td>: <%= provider.getResidentGender() %></td> 
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div><!--table-responsive close-->
-                                </div><!--col-md-6 close-->
-                                <div class="col-md-6">
-                                    <div class="table-responsive responsiv-table">
-                                        <table class="table bio-table">
-                                            <tbody>
-                                                
-                                                <tr>  
-                                                    <td>Emai Id</td>
-                                                    <td>: <%= provider.getEmail() %></td> 
-                                                    </tr>
-                                                <tr>    
-                                                    <td>Mobile</td>
-                                                    <td>: <%= provider.getMobile() %></td>       
-                                                </tr>
-                                                <tr>    
-                                                    <td>Birth Date</td>
-                                                    <td>: <%= provider.getResidentBirthDate() %></td>       
-                                                </tr>
-                                                
-                                                <tr>    
-                                                    <td>Mother</td>
-                                                    <td>: <%= provider.getMotherUid() %></td>       
-                                                </tr>
-                                                
-                                                <tr>    
-                                                    <td>Father</td>
-                                                    <td>: <%= provider.getFatherUid() %></td>       
-                                                </tr>
-                                              
-                                            </tbody>
-                                        </table>
+                           
                                     </div><!--table-responsive close-->
                                 </div><!--col-md-6 close-->
                             </div><!--row close-->

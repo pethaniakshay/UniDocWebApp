@@ -72,18 +72,18 @@ public class ResidentDataProvider {
             PreparedStatement resident = con.prepareStatement("select * from resident where uid = ?");    
             resident.setString(1, uid);            
             ResultSet getResident = resident.executeQuery();
-            getResident.next();
+            while(getResident.next()){
             this.fullName = getResident.getString(2);
             this.firstName = getResident.getString(3);
             this.middleName = getResident.getString(4);
             this.lastName = getResident.getString(5);
             this.gender = getResident.getString(6);
             this.birthDate = getResident.getDate(7).toString();
-            
+            }
             PreparedStatement address = con.prepareStatement("select * from address where uid = ?");
             address.setString(1, uid);
             ResultSet getAddress = address.executeQuery();
-            getAddress.next();
+            while(getAddress.next()){
             this.addressTitle = getAddress.getString(2);
             this.addressHouseNo = getAddress.getString(3);
             this.addressStreet = getAddress.getString(4);
@@ -94,7 +94,7 @@ public class ResidentDataProvider {
             this.addressSatate = getAddress.getString(9);
             this.addressCountry = getAddress.getString(10);
             this.addressPincode = getAddress.getString(11);
-            
+        }
             PreparedStatement banAccount = con.prepareStatement("select * from bank_accounts where uid = ?");
             banAccount.setString(1, uid);
             ResultSet getBankAccount = banAccount.executeQuery(); 
@@ -111,69 +111,77 @@ public class ResidentDataProvider {
             PreparedStatement emails = con.prepareStatement("select * from contact_email where uid = ?");
             emails.setString(1, uid);
             ResultSet getEmail = emails.executeQuery();
-            getEmail.next();
-            this.email =getEmail.getString(2);
-            
+            while(getEmail.next()){
+                 this.email =getEmail.getString(2);
+            }
+       
             
             PreparedStatement mobiles = con.prepareStatement("select * from contact_mobile where uid = ?");
             mobiles.setString(1, uid);
             ResultSet getMobile = mobiles.executeQuery();
-            getMobile.next();
-            this.mobile =getMobile.getString(2);
+            while(getMobile.next()){
+                 this.mobile =getMobile.getString(2);
+            }
+           
             
             
             PreparedStatement drivingLicence = con.prepareStatement("select * from driving_licence where uid = ?");    
             drivingLicence.setString(1, uid);            
-            ResultSet getDriLiceData= resident.executeQuery();
-            getDriLiceData.next();
-            this.drivingLicenceNo = getDriLiceData.getString(1);
-            this.drivingLicenceCdoi = getDriLiceData.getDate(3).toString();
-            this.drivinLicenceDoi = getDriLiceData.getDate(4).toString();
-            this.drivingLicenceExpDate = getDriLiceData.getDate(5).toString();
-            this.drivingLicenceIsVerified = getDriLiceData.getString(6);
-            
+            ResultSet getDriLiceData= drivingLicence.executeQuery();
+            while(getDriLiceData.next()){
+                this.drivingLicenceNo = getDriLiceData.getString(1);
+                this.drivingLicenceCdoi = getDriLiceData.getDate(3).toString();
+                this.drivinLicenceDoi = getDriLiceData.getDate(4).toString();
+                this.drivingLicenceExpDate = getDriLiceData.getDate(5).toString();
+                this.drivingLicenceIsVerified = getDriLiceData.getString(6);
+            }
+          
             PreparedStatement eciId = con.prepareStatement("select * from eci_id where uid = ?");    
             eciId.setString(1, uid);            
-            ResultSet getEciId= resident.executeQuery();
-            getEciId.next();
-            eciSerialNo = getEciId.getString(1);
-            eciIsVerified = getEciId.getString(3);
+            ResultSet getEciId= eciId.executeQuery();
+            while(getEciId.next()){
+                eciSerialNo = getEciId.getString(1);
+                eciIsVerified = getEciId.getString(3);
+            }
             
             PreparedStatement isAlives = con.prepareStatement("select * from isalive where uid = ?");    
             isAlives.setString(1, uid);            
-            ResultSet getIsAlive= resident.executeQuery();
-            getIsAlive.next();
-            this.isAlive = getIsAlive.getString(2);
-            this.deathDate = getIsAlive.getString(3);
-            this.causeOfDeath = getIsAlive.getString(4);
-            this.uidInformedDeath = getIsAlive.getString(5);
-            
+            ResultSet getIsAlive= isAlives.executeQuery();
+            while(getIsAlive.next()){
+                this.isAlive = getIsAlive.getString(2);
+                this.deathDate = getIsAlive.getString(3);
+                this.causeOfDeath = getIsAlive.getString(4);
+                this.uidInformedDeath = getIsAlive.getString(5);
+            }
             
             PreparedStatement maritialInfo = con.prepareStatement("select * from maritaldeatials where uid = ?");    
             maritialInfo.setString(1, uid);            
-            ResultSet getMaritialInfo= resident.executeQuery();
-            getMaritialInfo.next();
-            this.maritialsatus = getMaritialInfo.getString(3);
-            this.martialUidPartner = getMaritialInfo.getString(2);
-            this.maritialdate = getMaritialInfo.getDate(4).toString();
+            ResultSet getMaritialInfo= maritialInfo.executeQuery();
+            while(getMaritialInfo.next()){
+                this.maritialsatus = getMaritialInfo.getString(3);
+                this.martialUidPartner = getMaritialInfo.getString(2);
+                this.maritialdate = getMaritialInfo.getDate(4).toString();     
+            }
             
             PreparedStatement panNumbers = con.prepareStatement("select * from pan_number where uid = ?");    
             panNumbers.setString(1, uid);            
-            ResultSet getPanInfo= resident.executeQuery();
-            getPanInfo.next();
-            this.panNumber = getPanInfo.getString(1);
-            this.panIsVerified = getPanInfo.getString(3);
+            ResultSet getPanInfo= panNumbers.executeQuery();
+            while(getPanInfo.next()){
+                this.panNumber = getPanInfo.getString(1);
+                this.panIsVerified = getPanInfo.getString(3);
+            }
             
             PreparedStatement parents = con.prepareStatement("select * from parents where uid = ?");    
             parents.setString(1, uid);            
-            ResultSet getParents = resident.executeQuery();
-            getParents.next();
-            this.parentMotherUid = getParents.getString(2);
-            this.parentFatherUid = getParents.getString(3);
+            ResultSet getParents = parents.executeQuery();
+            while(getParents.next()){
+                this.parentMotherUid = getParents.getString(2);
+                this.parentFatherUid = getParents.getString(3);
+            }
             
             PreparedStatement schoolDetail = con.prepareStatement("select * from school where uid = ?");
             schoolDetail.setString(1, uid);
-            ResultSet getSchoolDetail = banAccount.executeQuery(); 
+            ResultSet getSchoolDetail = schoolDetail.executeQuery(); 
             while(getSchoolDetail.next()){
                 ArrayList<String> a = new ArrayList<String>();
                 a.add(getSchoolDetail.getString(1)); //Admission Number
@@ -184,7 +192,7 @@ public class ResidentDataProvider {
                 this.schoolCollegedeatial.add(a);
             }
             con.commit();
-            con.close();
+        
         }catch(SQLException e){
             System.out.println("\u001B[35m"+"SQLExcleption: "+ e+"\u001B[0m");
         }   
@@ -297,4 +305,13 @@ public class ResidentDataProvider {
     public String getFatherUid(){
          return this.parentFatherUid;
     }
+    
+    public String getPANNumber(){
+        return this.panNumber;
+    }
+    
+    public String isPanVerified(){
+        return this.panIsVerified;
+    }
+    
 }
