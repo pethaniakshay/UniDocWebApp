@@ -34,7 +34,7 @@ public class ResidentDataProvider {
     private String addressCountry;
     private String addressPincode;
     
-    List<ArrayList<String>> bankAccounts = new ArrayList<>();
+    private List<ArrayList<String>> bankAccounts = new ArrayList<>();
     
      private String email;
     
@@ -310,8 +310,24 @@ public class ResidentDataProvider {
         return this.panNumber;
     }
     
-    public String isPanVerified(){
+    public String getIsPanVerified(){
         return this.panIsVerified;
+    }
+    
+    public List<ArrayList<String>> getBankaccounts(){
+        return this.bankAccounts;
+    }
+    
+    public String getMaritialStatus(){
+        return this.maritialsatus;
+    }
+    
+    public String getUidPartner(){
+        return this.martialUidPartner;
+    }
+    
+    public String getMaritiaDate(){
+        return this.maritialdate;
     }
     
 }
