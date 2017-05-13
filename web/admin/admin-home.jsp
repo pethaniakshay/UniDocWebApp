@@ -48,8 +48,8 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                      <li class="active"><a href="#">Approve New Registrations</a></li>
-                      <li><a href="#">View Resident</a></li>
+                      <li class="active"><a href="admin-home.jsp">Approve New Registrations</a></li>
+                      <li><a href="view-resident.jsp">View Resident</a></li>
                       <li><a href="#">Mange UIDs</a></li>
                       <li><a href="#">Analytics</a></li>
                       <li><a href="#">Approve E-kyc Provider</a></li>

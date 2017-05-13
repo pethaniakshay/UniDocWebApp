@@ -134,7 +134,8 @@
                                     <h4 class="pro-title">Driving Licence</h4>
                                 </div><!--col-md-12 close-->
                                 <div class="col-md-6">
-                                    <div class="table-responsive responsiv-table"><table class="table bio-table">
+                                    <div class="table-responsive responsiv-table">
+                                        <table class="table bio-table">
                                             <tbody>
                                                 <tr> 
                                                     <td>DL No</td>
